@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/nest-cli-docker/src",
+  "monorepo": true,
+  "root": "apps/nest-cli-docker",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/nest-cli-docker/tsconfig.app.json"
+  },
+  "projects": {
+    "nest-cli-docker": {
+      "type": "application",
+      "root": "apps/nest-cli-docker",
+      "entryFile": "main",
+      "sourceRoot": "apps/nest-cli-docker/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nest-cli-docker/tsconfig.app.json"
+      }
+    },
+    "service-a": {
+      "type": "application",
+      "root": "apps/service-a",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-a/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-a/tsconfig.app.json"
+      }
+    }
+  }
 }
