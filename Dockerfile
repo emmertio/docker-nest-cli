@@ -11,4 +11,4 @@ RUN npm install
 COPY . /app
 
 EXPOSE 3000
-CMD nest start $APP
+CMD nest start $APP --watch
