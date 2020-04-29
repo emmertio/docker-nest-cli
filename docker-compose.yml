@@ -1,10 +1,21 @@
 version: '3.1'
 
 services:
-  nest:
-    container_name: nest
-    image: emmert/nest-cli
-    ports:
-      - '3000:3000'
-    volumes:
-      - .:/app
+    nest-cli-docker:
+        container_name: nest-cli-docker
+        image: emmert/nest-cli
+        environment:
+            APP: nest-cli-docker
+        ports:
+            - '3000:3000'
+        volumes:
+            - .:/app
+    service-a:
+        container_name: service-a
+        image: emmert/nest-cli
+        environment:
+            APP: service-a
+        ports:
+            - '3001:3000'
+        volumes:
+            - .:/app
